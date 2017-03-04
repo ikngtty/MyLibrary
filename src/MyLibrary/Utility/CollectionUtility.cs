@@ -7,6 +7,16 @@ namespace Ikngtty.MyLibrary.Utility
 {
 	public static class CollectionUtility
 	{
+		public static HashSet<TSource> ToHashSet<TSource>(this IEnumerable<TSource> source)
+		{
+			HashSet<TSource> result = new HashSet<TSource>();
+			foreach (TSource sourceItem in source)
+			{
+				result.Add(sourceItem);
+			}
+			return result;
+		}
+		
 		#region GroupByAdjacently
 		
 		/// <summary>

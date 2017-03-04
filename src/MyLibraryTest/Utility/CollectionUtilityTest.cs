@@ -11,6 +11,23 @@ namespace Ikngtty.MyLibraryTest.Utility
 	public class CollectionUtilityTest
 	{
 		[Test]
+		public void ToHashSetTest()
+		{
+			{
+				string[] source = new string[0];
+				HashSet<string> result = source.ToHashSet();
+				Assert.AreEqual(0, result.Count);
+			}
+			{
+				string[] source = new string[] { "a", "a", "b", "a", "b" };
+				HashSet<string> result = source.ToHashSet();
+				Assert.AreEqual(2, result.Count);
+				Assert.True(result.Contains("a"));
+				Assert.True(result.Contains("b"));
+			}
+		}
+		
+		[Test]
 		public void GroupByAdjacentlyTest()
 		{
 			{
